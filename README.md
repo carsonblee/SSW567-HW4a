@@ -1,10 +1,8 @@
-# HW4a: GitHub API
-[![CircleCI](https://dl.circleci.com/status-badge/img/circleci/YBMEBAqhQKNrvTPDbdRbap/Uzcx6xoX9zwJYNYQd7TPgS/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/circleci/YBMEBAqhQKNrvTPDbdRbap/Uzcx6xoX9zwJYNYQd7TPgS/tree/main)
+# HW4c: GitHub API w/ New Testing
+[![CircleCI](https://dl.circleci.com/status-badge/img/circleci/YBMEBAqhQKNrvTPDbdRbap/Uzcx6xoX9zwJYNYQd7TPgS/tree/HW04c_Mocking.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/circleci/YBMEBAqhQKNrvTPDbdRbap/Uzcx6xoX9zwJYNYQd7TPgS/tree/HW04c_Mocking)
 
 # Assignment
-The assignment was to write code to interface with an external REST-based APIs, in this case, GitHub. The goal for the assignment was to request a user's GitHub ID as the input and print their repositories and the corresponding number of commmits each repo had.
+The last assignment was to write code to interface with an external REST-based APIs, in this case, GitHub. Building off of that, we are now using mocking to run dynamic tests that aren't dependent on values that might change, like number of commits in a repo. 
 
 # Thought Process
-My thought process started with the idea that this code should be broken up into two separate parts: fetching the repos and fetching the number of commits. Obviously, the more important step was to fetch the repos which was coded first as it lays the foundation for fetching the number of commits. Once that function was established and tested, able to fetch and print the repos of the user, I could move onto fetching the number of commits in each repo. Building into the loop that printed the repo names, I added a call to a new function that would also fetch the number of commits for that repo so the name and the number of commits could be printed at the same time on the same line.
-
-By breaking the problem up into two distinct steps, I found it easier to conceptualize and code than doing it all at once. 
+One thing I found very hard was wrapping my mind around how to use mocking and patches to achieve the testing goal of skipping over the call-and-response from the API. While I understand why it's so useful, it was hard to comprehend in the moment. Once that obstacle was overcome, I broke up testing into two parts of two. First being split between the functions of `get_repos` and `get_commit_count` and then with the assumption that the API call succeeded or failed.
